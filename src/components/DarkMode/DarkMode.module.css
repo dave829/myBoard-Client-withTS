@@ -1,0 +1,56 @@
+.container {
+  background-color: #a8d8d0;
+  border: 2px solid #7ac4b780;
+  border-radius: 300px;
+  width: 55px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.container:hover {
+  border: 2px solid #bae0d7;
+}
+
+.containerDarkmode {
+  background-color: #134e5e;
+}
+
+.containerDarkmode:hover {
+  border: 2px solid #51b3a3;
+}
+
+.toggle {
+  width: 23px;
+  height: 23px;
+  background-color: #7ac4b7;
+
+  appearance: none;
+  display: inline-block;
+  border-radius: 1em;
+  transition: 0.2s ease-in-out;
+  position: absolute;
+}
+.toggleDarkmode {
+  background-color: #7ac4b7;
+}
+
+.toggle:hover {
+  box-shadow: 1px 0px 4px 0px #fafafa;
+  cursor: pointer;
+}
+
+.toggle:checked {
+  transform: translateX(29px);
+}
+
+.moon {
+  padding: 3px 0 0 6px;
+  cursor: none;
+}
+
+.sun {
+  padding: 3px 0 0 8px;
+}

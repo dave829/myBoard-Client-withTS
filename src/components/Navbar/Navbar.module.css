@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.navContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputContainer {
+  margin-top: 10px;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 91%;
+  height: 60%;
+  background: rgba(255, 255, 255, 0.151);
+  border-radius: 6px;
+  border: none;
+
+  color: white;
+  caret-color: transparent;
+}
+
+input::-webkit-input-placeholder {
+  font-family: FontAwesome;
+  font-weight: lighter;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding: 2px 9px 2px 9px;
+  color: #ffff;
+  font-size: 1rem;
+}
+
+.navbarContainer {
+  height: 70%;
+}
+
+.sideBarList {
+  font-family: "Lato", sans-serif;
+  color: white;
+  height: 90%;
+  width: 91%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.sideBarList li {
+  height: 2.5rem;
+  color: white;
+  font-size: 2.2rem;
+
+  margin-bottom: 6px;
+}
+
+.sideBarList li:hover {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+}
+
+a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.3rem;
+  padding-left: 10px;
+  margin-top: 3px;
+}
+
+.navListTitle {
+  font-size: 1.1rem;
+  padding-left: 15px;
+}
+
+.copyrightbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  position: relative;
+}
+
+.copyrightContainer li {
+  font-size: 0.9rem;
+}
+
+.copyrightlogo span {
+  padding-right: 10px;
+}
+
+.notice {
+  width: 185px;
+  height: 40px;
+  border: 0.01px dashed #fff;
+  border-radius: 2px;
+  position: absolute;
+  top: -50px;
+  left: -16px;
+}
+
+.notice p {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,78 @@
+.container {
+  width: 100%;
+
+  height: 100%;
+}
+
+.gridBox {
+  height: 75%;
+  display: grid;
+  grid-auto-rows: 160px;
+  grid-gap: 2.5rem;
+  padding: 4rem;
+  grid-template-areas:
+    "a b c d"
+    "e f g h";
+  border-radius: 10px;
+}
+
+.bottomArrow {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.2rem;
+  border-radius: 10%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.bottomArrowBox {
+  width: 15%;
+  padding: 4px 18px 8px 14px;
+  border: 0.01px solid #7ac4b780;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+  text-transform: uppercase;
+}
+
+.bottomArrowBox:active {
+  background-color: #97cac1;
+}
+
+.bottomArrow span {
+  padding-right: 10px;
+  padding-top: 2px;
+}
+
+.arrow {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+  .gridBox {
+    grid-template-areas:
+      "a b c "
+      "d e f "
+      "g h 0";
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .gridBox {
+    grid-template-areas:
+      "a b "
+      "c d "
+      "e f "
+      "g h ";
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+}

@@ -1,0 +1,32 @@
+.boxTitle {
+  height: 5.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff34;
+
+  border-radius: 10px;
+
+  box-shadow: #86d7bf00;
+}
+
+.toDoBox {
+  color: #fff;
+  font-size: 65px;
+  padding-left: 60px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  width: 50%;
+}
+
+.backForward {
+  width: 50%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 45px;
+  padding-right: 4rem;
+}
+
+svg {
+  cursor: pointer;
+}

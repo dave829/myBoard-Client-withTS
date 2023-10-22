@@ -1,0 +1,22 @@
+.container {
+  position: absolute;
+  top: -25px;
+  right: 8px;
+}
+
+.navMenusBox {
+  display: flex;
+  width: 100%;
+  height: 1rem;
+}
+
+.navMenusBox li {
+  padding-left: 1.5rem;
+  color: #fafafa;
+  display: flex;
+  align-items: center;
+}
+
+.navMenusBox li:hover {
+  color: #51b3a3;
+}

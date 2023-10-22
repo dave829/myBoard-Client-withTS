@@ -1,0 +1,141 @@
+.container {
+  width: 100%;
+  height: 87%;
+  display: flex;
+  flex-direction: column;
+}
+
+.boardBoxtop {
+  height: 20%;
+  width: 100%;
+  padding: 0 4rem;
+}
+
+.boardBoxBody {
+  height: 70%;
+  width: 100%;
+  background: linear-gradient(to right, #9ad0b9, #abdad2);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-top: 3px solid #8cc8b9;
+
+  padding: 0 4rem;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.boardBoxBodyDarkmode {
+  background: #134e5e;
+  border-top: 3px solid #43727f;
+}
+
+.boardBoxBody:-webkit-scrollbar {
+  width: 50px; /* 스크롤바의 너비 */
+}
+
+.boardBoxBody:-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #217af4; /* 스크롤바의 색상 */
+
+  border-radius: 10px;
+}
+
+.boardBoxBody:-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, 0.1); /*스크롤바 뒷 배경 색상*/
+}
+
+/* ul */
+.listBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.listBox li:first-child {
+  margin-top: 0.7rem;
+}
+
+/* li */
+.listItemBoxContainer {
+  height: 5rem;
+  margin-bottom: 0.7rem;
+}
+
+.listItemBox {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid darkslategrey;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.listItemBoxDarkmode {
+  border-bottom: 1px solid #fafafa;
+}
+
+.listItemsLeft,
+.listItemsRight {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.listItemsLeft {
+  justify-content: flex-start;
+}
+
+.listItemsRight {
+  justify-content: flex-end;
+}
+
+.listImg {
+  height: 90%;
+  width: 4rem;
+  background-color: #73ddbd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listContent {
+  font-size: 1rem;
+  margin-left: 12px;
+  color: black;
+}
+
+.listContentDarkmode {
+  color: #fff;
+}
+
+.listName {
+  color: black;
+}
+
+.listNameDarkmode {
+  color: #fff;
+}
+
+.boardBoxbottom {
+  height: 10%;
+}
+
+.boardBoxbtul {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 14px;
+}
+
+.boardBoxbtul li {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
