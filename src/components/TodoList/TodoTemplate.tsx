@@ -28,7 +28,7 @@ const StyledTodoTemplate = styled.article`
   @media (max-width: 1920px) {
     width: 512px;
     height: 100%;
-    margin: 2rem auto;
+    margin: 3rem auto;
     border-radius: 4px;
   }
 
