@@ -51,6 +51,14 @@ export const Navbar = () => {
             </Link>
           </li>
           <li>
+            <Link to="/HabitTracker">
+              <span className={styles.icon}>
+                <ImClipboard />
+              </span>
+              <span className={styles.navListTitle}>HabitTracker</span>
+            </Link>
+          </li>
+          {/* <li>
             <Link to="/BoardMain">
               <span className={styles.icon}>
                 <ImClipboard />
@@ -79,17 +87,7 @@ export const Navbar = () => {
                 <del>Board</del>
               </span>
             </Link>
-          </li>
-          <li>
-            <Link to="/BoardMain">
-              <span className={styles.icon}>
-                <ImClipboard />
-              </span>
-              <span className={styles.navListTitle}>
-                <del>Board</del>
-              </span>
-            </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className={styles.copyrightContainer}>

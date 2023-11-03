@@ -20,3 +20,8 @@
 .navMenusBox li:hover {
   color: #51b3a3;
 }
+
+.navMenuName {
+  padding-left: 0.2rem;
+  padding-bottom: 4px;
+}

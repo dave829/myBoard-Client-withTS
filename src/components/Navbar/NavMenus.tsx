@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavMenus.module.css";
-import { HiOutlineHome } from "react-icons/hi";
 import { DarkMode } from "../DarkMode/DarkMode";
+import { BiLogIn } from "react-icons/bi";
+import { AiOutlineTags } from "react-icons/ai";
+import { AiOutlineInfoCircle } from "react-icons/ai";
+import { BiBookAlt } from "react-icons/bi";
 
 export const NavMenus = () => {
   return (
@@ -11,33 +14,41 @@ export const NavMenus = () => {
         <li>
           <Link to="/">
             <span>
-              <HiOutlineHome />
+              <AiOutlineInfoCircle />
             </span>
-            <span>Blog</span>
+            <span className={styles.navMenuName}>About</span>
           </Link>
         </li>
         <li>
           <Link to="/">
             <span>
-              <HiOutlineHome />
+              <BiBookAlt />
             </span>
-            <span>Tags</span>
+            <span className={styles.navMenuName}>Blog</span>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/">
             <span>
               <HiOutlineHome />
             </span>
-            <span>Projects</span>
+            <span className={styles.navMenuName}>Projects</span>
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/">
             <span>
-              <HiOutlineHome />
+              <AiOutlineTags />
             </span>
-            <span>About</span>
+            <span className={styles.navMenuName}>Tags</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/login">
+            <span>
+              <BiLogIn />
+            </span>
+            <span className={styles.navMenuName}>Login</span>
           </Link>
         </li>
         <li style={{ color: "#fafafa" }}>

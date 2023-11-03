@@ -1,22 +1,22 @@
-import React from "react";
-import styles from "./TodoList.module.css";
-
-import { useDispatch, useSelector } from "react-redux";
-import { setDarkmode } from "../../redux-toolkitStore/reducers/darkmodeReducer";
-import { DarkModeProps } from "../../model/darkmode";
+import React, { useState } from "react";
+import { TodoListbody } from "./TodoListbody/TodoListbody";
+import { Header } from "./Header/Header";
+import { TodoTemplate } from "./TodoTemplate";
+import { useAppSelector } from "../../redux-toolkitStore/store";
 
 export const TodoList = () => {
-  const darkmode = useSelector((state: DarkModeProps) => state.darkmode);
-
-  const dispatch = useDispatch();
-
-  const handleMode = () => {
-    dispatch(setDarkmode(!darkmode));
-  };
+  const filters = useAppSelector((state) => state.todo.filters);
+  const [filter, setFilter] = useState(filters[0]);
+  //console.log(filter); //초기값 all
 
   return (
-    <div>
-      <h1>TodoList</h1>
-    </div>
+    <>
+      <TodoTemplate>
+        <Header filters={filters} filter={filter} onChangeFilter={setFilter} />
+        <TodoListbody filter={filter} />
+      </TodoTemplate>
+    </>
   );
 };
+
+React.memo(TodoList);
