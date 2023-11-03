@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Todo } from "../Todo/Todo";
 import { TodoInput } from "../TodoInput/TodoInput";
+import { TfiFaceSad } from "react-icons/tfi";
 
 export const TodoListbody = ({ filter }) => {
   //complete
@@ -38,7 +39,9 @@ export const TodoListbody = ({ filter }) => {
               />
             ))
           ) : (
-            <NoItems>완료된 일이 없습니다.</NoItems>
+            <NoItems>
+              no list on this board yet <TfiFaceSad />
+            </NoItems>
           )}
         </StyledUl>
         <TodoInput onAdd={handleAdd} />
@@ -80,7 +83,7 @@ const StyledUl = styled.ul`
 const NoItems = styled.div`
   padding: 8px;
   width: fit-content;
-  margin: 0 auto;
+  margin: 6rem auto;
   border-radius: 4px;
   text-align: center;
   border: 1px solid var(--line-gray);
