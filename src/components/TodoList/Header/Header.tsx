@@ -48,7 +48,7 @@ const TodoTitleButton = styled.button<{ selected: any }>`
   margin: 0.3rem;
   text-transform: capitalize;
   background-color: transparent;
-  color: var(--color-accent);
+  color: #ffffff;
   opacity: 0.8;
   font-weight: bold;
 

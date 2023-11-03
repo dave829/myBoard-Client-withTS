@@ -52,12 +52,8 @@ const StyledTodoContent = styled.section<{ selected: any }>`
   -webkit-box-shadow: 10px 9px 13px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 9px 13px -1px rgba(0, 0, 0, 0.75);
   overflow: hidden;
-
-  background: linear-gradient(
-    0deg,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(253, 187, 45, 1) 100%
-  );
+  box-shadow: 9px 14px 17px 0px rgb(145 198 190 / 57%);
+  background: linear-gradient(0deg, rgb(34 193 195 / 23%) 0%, #43727f 100%);
 
   ${(props) =>
     props.selected &&

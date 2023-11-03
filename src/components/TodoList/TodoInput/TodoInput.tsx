@@ -92,7 +92,7 @@ const StyledInput = styled.input`
 
 const StyledButton = styled.button`
   cursor: pointer;
-  background-color: #f8bb30;
+  background-color: #5d9aab;
   color: var(--color-white);
   font-weight: bold;
   font-size: 1.4rem;
