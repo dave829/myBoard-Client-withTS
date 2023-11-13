@@ -3,7 +3,6 @@ import example1 from "../../assets/imgs/carousel/example1.svg";
 import example2 from "../../assets/imgs/carousel/example2.svg";
 import example3 from "../../assets/imgs/carousel/example3.svg";
 //import styled, { css } from "styled-components";
-import styles from "./CarouselCustom.module.css";
 
 const imgs = [
   {
@@ -34,23 +33,19 @@ export const CarouselCustom = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className="overflow-hidden relative">
       <div
-        className={`flex items-center transition ease-out duration-40`}
+        className={`flex transition ease-out duration-40`}
         style={{
           transform: `translateX(-${current * 100}%)`,
         }}
       >
         {imgs.map((s) => {
           return (
-            <span className={styles.imgSpan}>
-              <img
-                className="border-2 border-solid border-red-700"
-                //w-20 h-25 ml-25
-                // px-96 py-20
-                src={s.num}
-              />
-            </span>
+            <img
+              className="border-2 border-solid border-red-700 px-96 py-20"
+              src={s.num}
+            />
           );
         })}
       </div>

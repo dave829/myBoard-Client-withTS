@@ -6,12 +6,17 @@ import { v4 as uuidv4 } from "uuid";
 
 //import { todoListAction } from "../../../redux-toolkitStore/actions/todoAction";
 
-export const TodoInput = ({ onAdd }) => {
+export const TodoInput = ({ onAdd }: any) => {
   const [text, setText] = useState("");
 
-  const handleChange = (e) => setText(e.target.value);
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+  //   setText(e.target.value);
 
-  const handleSubmit = (e) => {
+  const handleChange = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => setText(e.target.value);
+
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (text.trim().length === 0) {
       return;

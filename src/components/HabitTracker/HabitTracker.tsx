@@ -1,23 +1,9 @@
-import React from "react";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import {
-  HabitTrackerAtom,
-  QuantityHabitSelector,
-  TotalHabitSelectorCount,
-} from "../../recoil/HabitTrackerAtom";
+import { CarouselCustom } from "../CarouselCustom/CarouselCustom";
 
 export const HabitTracker = () => {
-  const [value, setValue] = useRecoilState(HabitTrackerAtom);
-
-  const justhabitValue = useRecoilValue(HabitTrackerAtom);
-  const justSethabitValue = useSetRecoilState(HabitTrackerAtom);
-
-  const habitValue = useRecoilValue(QuantityHabitSelector);
-  const TotalHabitSelectorCounts = useRecoilValue(TotalHabitSelectorCount);
-
   return (
     <div>
-      <h1>HabitTracker coming soon!</h1>
+      <h1 className="text-6xl">HabitTracker coming soon!</h1>
     </div>
   );
 };

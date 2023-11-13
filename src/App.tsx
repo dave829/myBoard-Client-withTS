@@ -13,9 +13,7 @@ import { NavProvider } from "./context/NavContext";
 import { AnyProvider } from "./context/AnyContext";
 import { TodoListPage } from "./route/TodoListPage";
 import { Provider } from "react-redux";
-import GlobalStyles from "./Theme/GlobalStyles";
 
-import React from "react";
 import { store } from "./redux-toolkitStore/store";
 import { HabitTrackerPage } from "./route/HabitTrackerPage";
 import { RecoilRoot } from "recoil";
@@ -32,8 +30,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <MainHomePage /> },
       { path: "/login", element: <Login /> },
-      { path: "/page/:pageId", element: <Page /> },
       { path: "/boardmain", element: <BoardPage /> },
+      { path: "/page/:pageId", element: <Page /> },
       { path: "/todoList", element: <TodoListPage /> },
       { path: "/habittracker", element: <HabitTrackerPage /> },
     ],
@@ -49,7 +47,6 @@ function App() {
             <MainImgProvider>
               <NavProvider>
                 <AnyProvider>
-                  <GlobalStyles />
                   <RouterProvider router={router} />
                   <ReactQueryDevtools initialIsOpen={true} />
                 </AnyProvider>

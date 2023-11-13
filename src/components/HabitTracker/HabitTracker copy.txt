@@ -1,0 +1,35 @@
+import React, { useEffect } from "react";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import {
+  HabitTrackerAtom,
+  QuantityHabitSelector,
+  TotalHabitSelectorCount,
+} from "../../recoil/HabitTrackerAtom";
+import { HtTitle } from "./HtTitle/HtTitle";
+import { getBoardListDataFromServer } from "../../api/firebase";
+
+import { boardListData } from "../../redux-toolkitStore/reducers/boardListDataSlice";
+import { Carousel } from "../CarouselCustom/Carousel/Carousel";
+
+export const HabitTracker = () => {
+  const [value, setValue] = useRecoilState(HabitTrackerAtom);
+
+  const justhabitValue = useRecoilValue(HabitTrackerAtom);
+  const justSethabitValue = useSetRecoilState(HabitTrackerAtom);
+
+  const habitValue = useRecoilValue(QuantityHabitSelector);
+  const TotalHabitSelectorCounts = useRecoilValue(TotalHabitSelectorCount);
+
+  useEffect(() => {
+    getBoardListDataFromServer();
+  }, []);
+
+  //getBoardListDataFromServer;
+  return (
+    <div>
+      <HtTitle />
+      <h1>HabitTracker coming soon!</h1>
+      <Carousel />
+    </div>
+  );
+};

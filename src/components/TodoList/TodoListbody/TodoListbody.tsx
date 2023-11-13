@@ -4,19 +4,40 @@ import { Todo } from "../Todo/Todo";
 import { TodoInput } from "../TodoInput/TodoInput";
 import { TfiFaceSad } from "react-icons/tfi";
 
-export const TodoListbody = ({ filter }) => {
+type TodoListBodyValue = {
+  filter: string;
+  updated: string;
+  id: string;
+  delete: string;
+};
+
+type Filter = {
+  todo: any;
+  onUpdate: Function;
+  onDelete: Function;
+  // id: any;
+  // text: string;
+  // status: string;
+};
+interface TodoListbody {
+  filter: string;
+}
+
+export const TodoListbody: React.FC<TodoListbody> = ({ filter }) => {
   //complete
   const [todos, setTodos] = useState(() => readTodosFromLocalStorage());
 
-  const handleAdd = (todo) => setTodos([...todos, todo]);
+  const handleAdd = (todo: TodoListBodyValue) => setTodos([...todos, todo]);
 
-  const handleUpdate = (updated) => {
+  const handleUpdate = (updated: TodoListBodyValue) => {
     //console.log(updated);
-    setTodos(todos.map((t) => (t.id === updated.id ? updated : t)));
+    setTodos(
+      todos.map((t: TodoListBodyValue) => (t.id === updated.id ? updated : t))
+    );
   };
 
-  const handleDelete = (deleted) =>
-    setTodos(todos.filter((t) => t.id !== deleted.id));
+  const handleDelete = (deleted: TodoListBodyValue) =>
+    setTodos(todos.filter((t: TodoListBodyValue) => t.id !== deleted.id));
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -25,12 +46,23 @@ export const TodoListbody = ({ filter }) => {
   const filtered = getFilteredItems(todos, filter); //complete
   //console.log(filtered);
 
+  // type Filter = {
+  //   key: any;
+  //   todo: any;
+  //   onUpdate: Function;
+  //   onDelete: Function;
+  //   id: any;
+  //   text: string;
+  //   status: string;
+  //item: string;
+  // };
+
   return (
     <>
       <StyledContainer>
         <StyledUl>
           {filtered.length ? (
-            filtered.map((item) => (
+            filtered.map((item: any) => (
               <Todo
                 key={item.id}
                 todo={item}
@@ -56,15 +88,28 @@ function readTodosFromLocalStorage() {
   return todos ? JSON.parse(todos) : [];
 }
 
-function getFilteredItems(todos, filter) {
+interface GetFilterdItems {
+  todos: todo[];
+  filter_: string;
+  //filter: any;
+}
+
+type todo = {
+  status: string;
+  filter: string;
+  todo: string[];
+  //(todo : string[]) => string;
+};
+
+function getFilteredItems(todos: any, filter_: any) {
   // console.log(todos[0].status + "투두");
   // console.log(filter + "필터");
-  if (filter === "all") {
+  if (filter_ === "all") {
     return todos;
   }
   //return todos.filter((todo) => todo.status === filter);
 
-  return todos.filter((todo) => todo.status === filter);
+  return todos.filter((todo: any) => todo.status === filter_);
 }
 
 const StyledContainer = styled.div`

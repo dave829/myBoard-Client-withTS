@@ -4,10 +4,14 @@ import { Header } from "./Header/Header";
 import { TodoTemplate } from "./TodoTemplate";
 import { useAppSelector } from "../../redux-toolkitStore/store";
 
-export const TodoList = () => {
-  const filters = useAppSelector((state) => state.todo.filters);
-  const [filter, setFilter] = useState(filters[0]);
-  //console.log(filter); //초기값 all
+type Props = {
+  // filter: (value: number) => void;
+};
+
+export const TodoList: React.FC = () => {
+  const filters = useAppSelector<string[]>((state) => state.todo.filters);
+  const [filter, setFilter] = useState<string>(filters[0]);
+  //console.log(filter); //초기값 all string
 
   return (
     <>

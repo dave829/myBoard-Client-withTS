@@ -5,12 +5,10 @@ import { MainNav } from "./MainNav";
 import { BoardList } from "../BoardList/BoardList";
 
 export const BoardMain = () => {
-  const [name, setName] = useState("Board");
-
   return (
     <>
       <section className={styles.container}>
-        <MainNav name={name} />
+        <MainNav />
         <BoardList />
       </section>
     </>

@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { BoardListData, boardListTy } from "../../model/boardListdata";
+import { BoardListData } from "../../model/boardListdata";
 
 export const boardListData: BoardListData[] = [
   {

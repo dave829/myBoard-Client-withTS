@@ -3,7 +3,11 @@ import { MainImgContext } from "../../context/MainImgContext";
 import styles from "./Projects.module.css";
 import { Link } from "react-router-dom";
 
-export const Projects = ({ val }) => {
+type MainhomeProps = {
+  val: string;
+};
+
+export const Projects = ({ val }: MainhomeProps) => {
   return (
     <div className={styles.itemContainer}>
       <ul className={`${styles.itembox}`}>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useBoardList({ salesOnly }) {
+export default function useBoardList({ salesOnly }: any) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
   const [boardLists, setBoardLists] = useState([]);

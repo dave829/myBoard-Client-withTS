@@ -1,14 +1,12 @@
-import React, { FC, useState } from "react";
 import styled, { css } from "styled-components";
-import {
-  useAppDispatch,
-  useAppSelector,
-} from "../../../redux-toolkitStore/store";
-import { v4 as uuidv4 } from "uuid";
-//import styles from "./Header.module.css";
-import { setFilter } from "../../../redux-toolkitStore/reducers/todoSlice";
 
-export const Header = ({ filters, filter, onChangeFilter }) => {
+type HeaderProps = {
+  filters: string[];
+  filter: string;
+  onChangeFilter: Function;
+};
+
+export const Header = ({ filters, filter, onChangeFilter }: HeaderProps) => {
   return (
     <TodoTitleHeader>
       <TodoTitleUl>

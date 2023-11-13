@@ -1,9 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { v4 as uuidv4 } from "uuid";
+
 import styles from "./BoardList.module.css";
-import { CarouselCustom } from "../CarouselCustom/CarouselCustom";
+
 import { Forum } from "../../model/forum";
 import { useAppSelector } from "../../redux-toolkitStore/store";
+import { CarouselCustom } from "../CarouselCustom/CarouselCustom";
 
 export const BoardList = () => {
   const darkmode = useAppSelector((state) => state.darkmode).darkmode;
@@ -28,6 +30,7 @@ export const BoardList = () => {
   return (
     <div className={styles.container}>
       <div className={styles.boardBoxtop}>
+        {/* 캐루셀 컴포넌트 넣는곳 */}
         <CarouselCustom />
       </div>
 

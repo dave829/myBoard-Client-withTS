@@ -13,14 +13,20 @@ const image = [
   { value: "assets/checklist.mp4" },
 ];
 
-export const MainImgProvider = ({ children }) => {
-  const [imgs, setImgs] = useState([]);
+interface Iprovider {
+  children: React.ReactNode;
+}
+
+interface imgs {}
+
+export const MainImgProvider = ({ children }: Iprovider) => {
+  const [imgs, setImgs] = useState<{}[]>([]);
 
   useEffect(() => {
     setImgs(image);
   }, []);
 
-  const imgsMap = imgs.map((v) => v.value);
+  const imgsMap = imgs.map((v: any) => v.value);
 
   return (
     <MainImgContext.Provider value={{ imgsMap, imgs }}>

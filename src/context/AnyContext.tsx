@@ -1,7 +1,9 @@
 import React from "react";
 import { createContext, useEffect, useState } from "react";
 
-export const AnyContext = createContext({});
+interface AnyContextType {}
+
+export const AnyContext = createContext<{}>({});
 
 export type boardListTy = {
   title: string;
@@ -38,8 +40,12 @@ const boardListData: boardListTy[] = [
   },
 ];
 
-export const AnyProvider = ({ children }) => {
-  const [menuName, setMenuName] = useState("");
+interface Iprovider {
+  children: React.ReactNode;
+}
+
+export const AnyProvider = ({ children }: Iprovider) => {
+  const [menuName, setMenuName] = React.useState("");
 
   const [darkMode, setDarkMode] = useState(false);
 
@@ -69,7 +75,7 @@ export const AnyProvider = ({ children }) => {
   );
 };
 
-function updateDarkMode(darkMode) {
+function updateDarkMode(darkMode: boolean) {
   if (darkMode) {
     localStorage.theme = "dark";
   } else {

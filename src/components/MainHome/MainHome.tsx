@@ -6,6 +6,14 @@ import { MainNav } from "../MainNav/MainNav";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { useQuery } from "@tanstack/react-query";
 
+//{ "value": "assets/calendar.mp4" },
+
+interface ImgsMapProps {
+  key: string;
+  val: string;
+  value: string;
+}
+
 export const MainHome = () => {
   const {
     isLoading,
@@ -28,7 +36,7 @@ export const MainHome = () => {
     <section className={styles.container}>
       <MainNav />
       <div className={styles.gridBox}>
-        {imgsMap.map((val) => (
+        {imgsMap.map((val: ImgsMapProps) => (
           <Projects key={val.value} val={val.value} />
         ))}
       </div>

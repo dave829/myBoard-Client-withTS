@@ -2,25 +2,25 @@ import React from "react";
 import styled from "styled-components";
 import { FaTrashAlt } from "react-icons/fa";
 
-// type status = {
-//   id: string;
-//   todo: string;
-//   status: string;
-// };
+type TodoListProps = {
+  todo: TodoProps;
+  onUpdate: Function;
+  onDelete: Function;
+};
 
-// type todoList = {
-//   todo: {
-//     id: any;
-//     todo: any;
-//   };
-// };
+type TodoProps = {
+  id: string;
+  text: string;
+  status: string;
+};
 
-export const Todo = ({ todo, onUpdate, onDelete }) => {
-  const { id, text, status } = todo;
-  //console.log(status);
+export const Todo = ({ todo, onUpdate, onDelete }: TodoListProps) => {
+  const { id, text, status }: TodoProps = todo;
+  //console.log(id, text, status);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     //console.log(e.target.checked);
+
     const status = e.target.checked ? "completed" : "active";
     //console.log(status);
     onUpdate({ ...todo, status });
