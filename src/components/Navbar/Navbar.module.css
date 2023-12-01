@@ -100,6 +100,10 @@ a {
   font-size: 0.9rem;
 }
 
+.copyrightlogo {
+  display: flex;
+}
+
 .copyrightlogo span {
   padding-right: 10px;
 }

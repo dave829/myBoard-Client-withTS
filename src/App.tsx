@@ -19,6 +19,7 @@ import { HabitTrackerPage } from "./route/HabitTrackerPage";
 import { RecoilRoot } from "recoil";
 import { Login } from "./route/Login";
 import { Page } from "./route/Page";
+import { BoardListNew } from "./components/BoardListNew/BoardListNew";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
       { path: "/page/:pageId", element: <Page /> },
       { path: "/todoList", element: <TodoListPage /> },
       { path: "/habittracker", element: <HabitTrackerPage /> },
+      { path: "/BoardListNew", element: <BoardListNew /> },
     ],
   },
 ]);

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-google-maps/api": "^2.19.2",
     "@reduxjs/toolkit": "^1.9.7",
     "@tanstack/react-query": "^4.35.3",
     "@tanstack/react-query-devtools": "^4.35.3",
@@ -16,6 +17,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.29",
     "@types/uuid": "^9.0.6",
+    "axios": "^1.6.2",
     "firebase": "^10.5.2",
     "i": "^0.3.7",
     "react": "^18.2.0",

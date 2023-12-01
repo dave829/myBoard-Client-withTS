@@ -90,8 +90,9 @@ const StyledInput = styled.input`
   outline: none;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  color: black;
   &::placeholder {
-    color: #9ca3af;
+    color: #5c5e64;
   }
 `;
 

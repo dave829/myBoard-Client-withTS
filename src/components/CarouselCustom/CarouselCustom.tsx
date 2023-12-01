@@ -4,6 +4,7 @@ import example2 from "../../assets/imgs/carousel/example2.svg";
 import example3 from "../../assets/imgs/carousel/example3.svg";
 //import styled, { css } from "styled-components";
 import styles from "./CarouselCustom.module.css";
+import { v4 as uuidv4 } from "uuid";
 
 const imgs = [
   {
@@ -43,7 +44,7 @@ export const CarouselCustom = () => {
       >
         {imgs.map((s) => {
           return (
-            <span className={styles.imgSpan}>
+            <span key={uuidv4()} className={styles.imgSpan}>
               <img
                 className="border-2 border-solid border-red-700"
                 //w-20 h-25 ml-25
