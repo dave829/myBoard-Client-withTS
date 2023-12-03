@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { addNewBoardList } from "../../api/firebase";
 import { Button } from "../ui/Button";
+import styled from "styled-components";
+import useBoard from "../../hooks/useBoard";
 
 interface BoardLists {
   name?: string;
@@ -19,7 +21,10 @@ export const BoardListNew = () => {
   //const [file, setFile] = useState();
   const [isuploading, setIsUploading] = useState(false);
   //const [success, setSuccess] = useState();
-  //console.log(boardList);
+  console.log(boardList);
+
+  //useEffect(() => {}, [boardList]);
+  const { addOrUpdateboardList } = useBoard();
 
   //input / onChange
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,16 +52,19 @@ export const BoardListNew = () => {
     //.then((url) => {
     //console.log(url);
 
+    // @ts-ignore
+    addOrUpdateboardList.mutate(boardList.length !== 0 && boardList);
+
     // Firebase에 새로운 제품을 추가.
-    addNewBoardList(boardList, null)
-      // })
-      .then(() => {
-        //     setSuccess("성공적으로 제품이 추가 되었습니다.");
-        //     setTimeout(() => {
-        //       setSuccess(null);
-        //     }, 4000);
-      })
-      .finally(() => setIsUploading(false));
+    // addNewBoardList(boardList, null)
+    //   // })
+    //   .then(() => {
+    //     //     setSuccess("성공적으로 제품이 추가 되었습니다.");
+    //     //     setTimeout(() => {
+    //     //       setSuccess(null);
+    //     //     }, 4000);
+    //   })
+    //   .finally(() => setIsUploading(false));
   };
 
   return (
@@ -78,7 +86,7 @@ export const BoardListNew = () => {
           required
           onChange={handleChange}
         /> */}
-        <input
+        <BoardWriteInput
           type="text"
           name="name"
           value={boardList.name ?? ""}
@@ -86,7 +94,7 @@ export const BoardListNew = () => {
           required
           onChange={handleChange}
         />
-        <input
+        <BoardWriteInput
           type="text"
           name="content"
           value={boardList.content ?? ""}
@@ -94,14 +102,14 @@ export const BoardListNew = () => {
           required
           onChange={handleChange}
         />
-        <input
+        {/* <BoardWriteInput
           type="text"
           name="options"
           value={boardList.options ?? ""}
           placeholder="추가사항(콤마(,)로 구분)"
           required
           onChange={handleChange}
-        />
+        /> */}
         <Button
           text={isuploading ? "업로드중..." : "제품 등록하기"}
           //disabled={isuploading}
@@ -110,3 +118,7 @@ export const BoardListNew = () => {
     </section>
   );
 };
+
+const BoardWriteInput = styled.input`
+  color: black;
+`;

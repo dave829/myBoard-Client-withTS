@@ -14,7 +14,7 @@ const app = initializeApp(firebaseConfig);
 // db
 const db = getDatabase(app);
 
-//게시판 글 Get
+//게시판 글 Get / Read / output
 export async function getBoardListApi() {
   return get(ref(db, "boardList")) //
     .then((snapshot) => {
@@ -25,20 +25,22 @@ export async function getBoardListApi() {
     });
 }
 
-//게시판 글쓰기
-export async function addNewBoardList(boardlist, imageURL) {
+//게시판 글쓰기 Write / Update / input
+export async function addNewBoardList(boardList, imageURL) {
   //console.log("글쓰기api호출됨");
   //console.log(boardlist);
   const id = uuid();
   return set(ref(db, `boardList/${id}`), {
-    ...boardlist,
+    ...boardList,
     id,
-    userName: boardlist.name,
-    content: boardlist.content,
-    image: imageURL,
-    options: boardlist.options.split(","),
-    like: boardlist.like,
+    userName: boardList.name,
+    content: boardList.content,
+    //image: imageURL,
+    //options: boardList.options.split(","),
+    //like: boardList.like,
   });
 }
+
+// Delete / input
 
 //좋아요 버튼 api
